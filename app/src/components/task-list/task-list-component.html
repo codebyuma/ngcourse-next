@@ -1,7 +1,13 @@
 <div>
-  <span>
-    Hello, {{ ctrl.username }}!
-    You've got {{ ctrl.numberOfTasks }} tasks.
-  </span>
-  <button ng-click="ctrl.addTask()">Add task</button>
+   <span>
+     Hello, {{ ctrl.username }}!
+     You've got {{ ctrl.tasks.length }} tasks.
+   </span>
+   <button ng-click="ctrl.addTask()">Add task</button>
 </div>
+
+ <div>
+   <div ng-repeat="task in ctrl.tasks" >
+     <ngc-task task="task"></ngc-task>
+   </div>
+ </div>

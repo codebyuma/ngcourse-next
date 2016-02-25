@@ -1,7 +1,7 @@
 export class TaskListComponent {
 
-  private numberOfTasks;
-  private username;
+  private username: string;
+  private tasks: any[];
 
   static selector = 'ngcTasks';
 
@@ -17,12 +17,24 @@ export class TaskListComponent {
   });
 
   constructor(private $log ) {
-    this.numberOfTasks = 0;
+    this.tasks = [
+      {
+        owner: 'alice',
+        description: 'Build the dog shed.'
+      },
+      {
+        owner: 'bob',
+        description: 'Get the milk.'
+      },
+      {
+        owner: 'alice',
+        description: 'Fix the door handle.'
+      }
+    ];
   }
 
   public addTask() {
-    this.$log.debug('Current number of tasks:', this.numberOfTasks);
-    this.numberOfTasks += 1;
+    this.$log.debug('Current number of tasks:', this.tasks.length);
   }
 
 };

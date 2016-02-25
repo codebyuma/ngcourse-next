@@ -11,7 +11,8 @@ import * as Rx from 'rx';
 import {
   MainComponent,
   TaskListComponent,
-  LoginFormComponent } from './components';
+  LoginFormComponent,
+  TaskComponent } from './components';
 
 angular.module('ngcourse', [])
   .directive(
@@ -22,7 +23,10 @@ angular.module('ngcourse', [])
     TaskListComponent.directiveFactory)
   .directive(
     LoginFormComponent.selector,
-    LoginFormComponent.directiveFactory);
+    LoginFormComponent.directiveFactory)
+  .directive(
+    TaskComponent.selector,
+    TaskComponent.directiveFactory);
 
 angular.element(document).ready(
   () => angular.bootstrap(document, ['ngcourse'])
