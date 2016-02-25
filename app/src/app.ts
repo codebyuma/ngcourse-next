@@ -8,12 +8,12 @@ import '../css/styles.css';
 
 import * as angular from 'angular';
 import * as Rx from 'rx';
-import {MainDirectiveCtrl} from './components/main/main-component';
+import {MainComponent} from './components/main/main-component';
 
 angular.module('ngcourse', [])
   .directive(
-    MainDirectiveCtrl.selector,
-    MainDirectiveCtrl.directiveFactory);
+    MainComponent.selector,
+    MainComponent.directiveFactory);
 
 angular.element(document).ready(
   () => angular.bootstrap(document, ['ngcourse'])
