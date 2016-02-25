@@ -20,8 +20,7 @@ module.exports = {
       'angular-ui-router',
       'koast-angular',
       'basscss/css/basscss.css',
-      'font-awesome/css/font-awesome.css',
-      'angular-translate'
+      'font-awesome/css/font-awesome.css'
     ]
   },
 
