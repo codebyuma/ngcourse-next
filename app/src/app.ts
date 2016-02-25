@@ -8,7 +8,7 @@ import '../css/styles.css';
 
 import * as angular from 'angular';
 import * as Rx from 'rx';
-import {MainDirectiveCtrl} from './components/main-component/main-component';
+import {MainDirectiveCtrl} from './components/main/main-component';
 
 angular.module('ngcourse', [])
   .directive(
