@@ -1,9 +1,11 @@
 export class MainComponent {
 
+  private isAuthenticated;
   private username;
-  private numberOfTasks;
 
   static selector = 'ngcMain';
+
+  static $inject = ['$log'];
 
   static directiveFactory: ng.IDirectiveFactory = () => {
     return {
@@ -16,8 +18,12 @@ export class MainComponent {
     };
   };
 
-  constructor() {
-    this.username = 'alice';
-    this.numberOfTasks = 0;
+  constructor(private $log) {
+    this.isAuthenticated = false;
+  }
+
+  public login (data) {
+    this.username = data.username;
+    this.isAuthenticated = true;
   }
 }
