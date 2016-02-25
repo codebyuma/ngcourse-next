@@ -1,4 +1,4 @@
-export class MainDirectiveCtrl {
+export class MainComponent {
 
   private username;
   private numberOfTasks;
@@ -10,7 +10,7 @@ export class MainDirectiveCtrl {
       restrict: 'E',
       scope: {},
       template: require('./main-component.html'),
-      controller: MainDirectiveCtrl,
+      controller: MainComponent,
       controllerAs: 'ctrl',
       bindToController: true
     };
