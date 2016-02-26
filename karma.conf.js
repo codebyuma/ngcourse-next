@@ -61,11 +61,11 @@ module.exports = function (config) {
       stats: { colors: true, reasons: true },
       debug: false
     },
-    
+
     webpackServer: {
       noInfo: true // prevent console spamming when running in Karma!
     },
-    
+
     reporters: ['mocha'], //'coverage'],
 
     // coverageReporter: {

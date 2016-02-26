@@ -14,6 +14,8 @@ import {
   LoginFormComponent,
   TaskComponent } from './components';
 
+import {TasksService} from './services/tasks/tasks-service';
+
 angular.module('ngcourse', [])
   .directive(
     MainComponent.selector,
@@ -26,7 +28,8 @@ angular.module('ngcourse', [])
     LoginFormComponent.directiveFactory)
   .directive(
     TaskComponent.selector,
-    TaskComponent.directiveFactory);
+    TaskComponent.directiveFactory)
+  .service('tasksService', TasksService);
 
 angular.element(document).ready(
   () => angular.bootstrap(document, ['ngcourse'])

@@ -5,6 +5,8 @@ export class TaskListComponent {
 
   static selector = 'ngcTasks';
 
+  static $inject = ['$log', 'tasksService'];
+
   static directiveFactory: ng.IDirectiveFactory = () => ({
     restrict: 'E',
     controllerAs: 'ctrl',
@@ -16,21 +18,15 @@ export class TaskListComponent {
     template: require('./task-list-component.html')
   });
 
-  constructor(private $log ) {
-    this.tasks = [
-      {
-        owner: 'alice',
-        description: 'Build the dog shed.'
-      },
-      {
-        owner: 'bob',
-        description: 'Get the milk.'
-      },
-      {
-        owner: 'alice',
-        description: 'Fix the door handle.'
-      }
-    ];
+  constructor(private $log, private tasksService) {
+    this.tasks = [];
+
+    this.tasksService
+      .getTasks()
+      .then(tasks => {
+        this.tasks = tasks;
+      })
+      .then(null, error => this.$log.error(status, error));
   }
 
   public addTask() {
