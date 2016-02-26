@@ -15,8 +15,15 @@ import {
   TaskComponent } from './components';
 
 import {TasksService} from './services/tasks/tasks-service';
+import {ServerService} from './services/server/server-service';
 
-angular.module('ngcourse', [])
+angular.module('ngcourse.server', [])
+  .constant('API_BASE_URL', 'http://ngcourse.herokuapp.com')
+  .service('serverService', ServerService);
+
+angular.module('ngcourse', [
+  'ngcourse.server'
+])
   .directive(
     MainComponent.selector,
     MainComponent.directiveFactory)
@@ -29,7 +36,8 @@ angular.module('ngcourse', [])
   .directive(
     TaskComponent.selector,
     TaskComponent.directiveFactory)
-  .service('tasksService', TasksService);
+  .service('tasksService', TasksService)
+  .run($log => $log.info('All ready!'));
 
 angular.element(document).ready(
   () => angular.bootstrap(document, ['ngcourse'])
