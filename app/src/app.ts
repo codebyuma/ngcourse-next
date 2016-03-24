@@ -15,14 +15,18 @@ import * as Rx from 'rx';
 
 
 
-angular.module('ngcourse', [])
+angular.module('ngcourse', ['ngcourse.services','ngcourse.b'])
   .directive(MainComponent.selector, MainComponent.directiveFactory)
   .directive(LoginFormComponent.selector, LoginFormComponent.directiveFactory)
   .directive(TaskComponent.selector, TaskComponent.directiveFactory)
-  .directive(TaskListComponent.selector, TaskListComponent.directiveFactory)
+  .directive(TaskListComponent.selector, TaskListComponent.directiveFactory);
+  
+
+angular.module('ngcourse.services', [])
   .constant('API_BASE_URL', 'http://ngcourse.herokuapp.com')
   .service('tasksService', TasksService)
   .service('serverService', ServerService);
+
 
 angular.element(document).ready(
     () => angular.bootstrap(document, ['ngcourse'])
