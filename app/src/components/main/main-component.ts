@@ -1,7 +1,8 @@
 export class MainComponent {
 
   private username;
-  private numberOfTasks;
+  
+  private isAuthenticated: boolean = false;
 
   static selector = 'ngcMain';
 
@@ -16,8 +17,17 @@ export class MainComponent {
     };
   };
 
-  constructor() {
+  static $inject = ['$log'];  
+  constructor(private $log) {
     this.username = 'alice';
-    this.numberOfTasks = 0;
+    
   }
+
+  public login(data,x) {
+    console.log(data);
+    this.isAuthenticated = true;
+  }
+  
+  
 }
+

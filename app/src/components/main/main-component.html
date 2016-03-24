@@ -1,1 +1,13 @@
-<span> {{ctrl.username}} - {{ctrl.numberOfTasks}} </span>
+<div>
+    <div ng-hide="ctrl.isAuthenticated">
+      
+      <ngc-login-form on-submit="ctrl.login(data)">
+      </ngc-login-form>
+
+    </div>
+    <div ng-show="ctrl.isAuthenticated">
+      <input ng-model="ctrl.username"/><br/>
+      <ngc-tasks username="ctrl.username"></ngc-tasks>
+      
+    </div>
+  </div>
