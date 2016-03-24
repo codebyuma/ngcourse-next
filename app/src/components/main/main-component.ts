@@ -2,7 +2,7 @@ export class MainComponent {
 
   private username;
   
-  private isAuthenticated: boolean = false;
+  private isAuthenticated: boolean = true;
 
   static selector = 'ngcMain';
 
@@ -23,7 +23,7 @@ export class MainComponent {
     
   }
 
-  public login(data,x) {
+  public login(data, x) {
     console.log(data);
     this.isAuthenticated = true;
   }
