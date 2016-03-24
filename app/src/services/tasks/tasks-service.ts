@@ -1,13 +1,11 @@
 export class TasksService {
 
-  static $inject = ['$log', '$http'];
+  static $inject = ['$log', 'serverService'];
 
-  constructor(private $log, private $http) { }
+  constructor(private $log, private serverService) { }
 
   public getTasks () {
-    return this.$http.get('http://ngcourse.herokuapp.com/api/v1/tasks')
-      
-      .then(response => response.data);
+    return this.serverService.get('/api/v1/tasks');
   };
 
  
