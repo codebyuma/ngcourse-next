@@ -7,7 +7,7 @@ import 'font-awesome/css/font-awesome.css';
 import '../css/styles.css';
 
 import {MainComponent, TaskListComponent, LoginFormComponent, TaskComponent} from './components';
-
+import {TasksService} from './services/tasks/tasks-service';
 
 import * as angular from 'angular';
 import * as Rx from 'rx';
@@ -17,8 +17,9 @@ import * as Rx from 'rx';
 angular.module('ngcourse', [])
   .directive(MainComponent.selector, MainComponent.directiveFactory)
   .directive(LoginFormComponent.selector, LoginFormComponent.directiveFactory)
-  .directive(TaskComponent.selector, TaskComponent.directiveFactory)  
-  .directive(TaskListComponent.selector, TaskListComponent.directiveFactory);
+  .directive(TaskComponent.selector, TaskComponent.directiveFactory)
+  .directive(TaskListComponent.selector, TaskListComponent.directiveFactory)
+  .service('tasksService', TasksService);
 
 angular.element(document).ready(
     () => angular.bootstrap(document, ['ngcourse'])
