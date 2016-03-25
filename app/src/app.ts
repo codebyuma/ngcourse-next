@@ -15,7 +15,7 @@ import * as Rx from 'rx';
 
 
 
-angular.module('ngcourse', ['ngcourse.services','ngcourse.b'])
+angular.module('ngcourse', ['ngcourse.services'])
   .directive(MainComponent.selector, MainComponent.directiveFactory)
   .directive(LoginFormComponent.selector, LoginFormComponent.directiveFactory)
   .directive(TaskComponent.selector, TaskComponent.directiveFactory)
