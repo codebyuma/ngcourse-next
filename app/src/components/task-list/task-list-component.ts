@@ -21,12 +21,11 @@ export class TaskListComponent {
     template: require('./task-list-component.html')
   });
 
-  static $inject = ['$log', 'tasksService'];
-  constructor(private $log, private tasksService) {
+  static $inject = ['$log', 'tasksStore'];
+  constructor(private $log, private tasksStore) {
 
     this.numberOfTasks = 0;
-    this.tasksService.getTasks()
-      .then(tasks => this.tasks = tasks);
+    this.tasksStore.tasks.subscribe(tasks => this.tasks = tasks);
 
 
 

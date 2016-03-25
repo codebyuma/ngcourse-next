@@ -4,9 +4,11 @@ export class TasksService {
 
   constructor(private $log, private serverService) { }
 
-  public getTasks () {
+  public getTasks() {
     return this.serverService.get('/api/v1/tasks');
   };
 
- 
+  public addTask(task) {
+    return this.serverService.post('/api/v1/tasks', task);
+  }
 }

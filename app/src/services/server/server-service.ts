@@ -8,4 +8,8 @@
       return this.$http.get(`${this.API_BASE_URL}${path}`)
         .then(response => response.data);
     }
-  }
+
+  public post(path, data) {
+    return this.$http.post(`${this.API_BASE_URL}${path}`, data);
+  }  
+ }
