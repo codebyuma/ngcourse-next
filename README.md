@@ -9,7 +9,7 @@ information.
 
 ## The Handouts
 
-See the [handout](https://github.com/rangle/ngcourse/tree/master/handout) for
+See the [handout](https://github.com/rangle/ngcourse-next/tree/master/handout) for
 the handout. You can either view it in your browser or build it into a PDF
 using the instructions in the README file in the handout directory.
 
